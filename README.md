@@ -24,7 +24,7 @@ Exemplo:
     "image": "dragonquest8.png"
 }
 
-### LISTAR PRODUTOS DO CARRINHO (GET) - Não concluído
+### LISTAR PRODUTOS DO CARRINHO (GET)
 http://localhost:8080/checkout
 
 ### ADICIONAR UM PRODUTO AO CARRINHO (POST) - Não concluído
