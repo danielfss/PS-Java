@@ -30,17 +30,17 @@ public class ShoppingCart {
 		this.total = 0.0;
 	}
 	
-	public void addItem(Product item) {
-		this.subtotal += item.getPrice();
+	public void addItem(Product product) {
+		this.subtotal += product.getPrice();
 		this.shipping = this.calcFrete();
 		this.total = this.calcTotal();
 	}
 
-	private double calcTotal() {
+	public double calcTotal() {
 		return this.subtotal + this.shipping;
 	}
 
-	private double calcFrete() {
+	public double calcFrete() {
 		if (this.subtotal >= 250)
 			return 0;
 		else
