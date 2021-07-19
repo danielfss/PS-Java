@@ -3,8 +3,6 @@ package br.com.supera.game.store.model.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.supera.game.store.model.Product;
-
 public class ShoppingCartDto {
 
 	private Long id;
@@ -14,23 +12,6 @@ public class ShoppingCartDto {
 	private Integer productQuantity = 0;
 
 	private List<ProductDto> products = new ArrayList<>();
-
-	public void addItem(Product item) {
-		this.subtotal += item.getPrice();
-		this.shipping = this.calcFrete();
-		this.total = this.calcTotal();
-	}
-
-	private double calcTotal() {
-		return this.subtotal + this.shipping;
-	}
-
-	private double calcFrete() {
-		if (this.subtotal >= 250)
-			return 0;
-		else
-			return this.products.size() * 10;
-	}
 
 	public Long getId() {
 		return id;

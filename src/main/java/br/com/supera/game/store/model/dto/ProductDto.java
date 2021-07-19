@@ -3,6 +3,8 @@ package br.com.supera.game.store.model.dto;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import br.com.supera.game.store.model.Product;
+
 public class ProductDto {
 
 	private Long id;
@@ -73,5 +75,16 @@ public class ProductDto {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
+	public Product toProduct(){
+        Product p = new Product();
+        p.getId();
+        p.getName();
+        p.getPrice();
+        p.getScore();
+        p.getImage();
+        return p;
+    }
+
 
 }

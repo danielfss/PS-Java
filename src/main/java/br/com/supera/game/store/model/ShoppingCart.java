@@ -3,7 +3,6 @@ package br.com.supera.game.store.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +28,23 @@ public class ShoppingCart {
 		this.shipping = 0.0;
 		this.subtotal = 0.0;
 		this.total = 0.0;
+	}
+	
+	public void addItem(Product item) {
+		this.subtotal += item.getPrice();
+		this.shipping = this.calcFrete();
+		this.total = this.calcTotal();
+	}
+
+	private double calcTotal() {
+		return this.subtotal + this.shipping;
+	}
+
+	private double calcFrete() {
+		if (this.subtotal >= 250)
+			return 0;
+		else
+			return this.products.size() * 10;
 	}
 
 	public long getId() {
