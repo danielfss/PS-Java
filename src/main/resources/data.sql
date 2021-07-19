@@ -1,0 +1,1 @@
+INSERT INTO PRODUCT(id, name, price, score, image) VALUES (1, 'Super Mario World', 50.0, 1, 'supermariopng');
